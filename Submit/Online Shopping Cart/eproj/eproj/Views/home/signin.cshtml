@@ -1,0 +1,67 @@
+﻿@model eproj.Models.customer
+@{
+    ViewBag.Title = "signin";
+    Layout = "~/Views/shared/_Layout1.cshtml";
+}
+
+
+<section class="signin-page account">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="block text-center">
+                    <a class="logo" href="/home/index">
+
+                        <span class="logo">On Click</span>
+                        <p class="text">The Online Shopping Mall</p>
+                      
+                    </a>
+                    <h2 class="text-center">Create Your Account</h2>
+                    @using (Html.BeginForm("signin","home",FormMethod.Post))
+                    {
+                    <form class="text-left clearfix" action="/home/index">
+
+                        @*<div class="form-group">
+                            <input type="number" class="form-control" placeholder="userid" name="cust_id">
+                        </div>*@
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First Name" name="fname">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last Name" name="lname">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username" name="cust_username">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="contact" name="contact">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="country" name="country">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="city" name="city">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="address" name="cust_address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" name="cust_pass">
+                        </div>
+                       
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-main text-center">Sign In</button>
+                        </div>
+                    </form>
+                    }
+                    <p class="mt-20">Already hava an account ?<a href="/home/login"> Login</a></p>
+                    <p class="mt-20">Customer Details<a href="/home/list"> Show Details</a></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

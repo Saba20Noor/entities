@@ -1,0 +1,70 @@
+﻿@model eproj.Models.employee
+@{
+    ViewBag.Title = "add_employee";
+    Layout = "~/Views/shared/_adminLayout.cshtml";
+}
+
+
+<br /><br />
+<div class="content-body">
+    <div class="authincation h-100">
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <h4 class="text-center mb-4">Add Employees</h4>
+                                    @*<form action="index.html">*@
+                                    @using (Html.BeginForm("add_employee", "admn", FormMethod.Post, new { enctype = "Multipart/form-data" }))
+                                    {
+
+
+                                        <div class="form-group">
+                                            <label><strong>User Name</strong></label>
+                                            <input type="text" name="emp_username" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Country</strong></label>
+                                            <input type="text" name="country" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Email</strong></label>
+                                            <input type="email" name="emp_email" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Phone</strong></label>
+                                            <input type="number" name="phone" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Date F Birth</strong></label>
+                                            <input type="date" name="date_of_birth" class="form-control">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label><strong>Password</strong></label>
+                                            <input type="text" name="emp_pass" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="file" name="image" class="form-control" />
+
+                                        </div>
+
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary btn-block">Add Employees</button>
+                                        </div>
+                                    }
+                                    @ViewBag.error
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

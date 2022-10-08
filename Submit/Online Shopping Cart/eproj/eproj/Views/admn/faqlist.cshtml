@@ -1,0 +1,80 @@
+﻿@model List<eproj.Models.faq>
+@{ 
+    Layout = "~/Views/shared/_adminLayout.cshtml";
+}
+
+
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Hi, welcome back!</h4>
+                    <span class="ml-1">FAQ Details</span>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">FAQ</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">FAQ Details</a></li>
+                </ol>
+            </div>
+        </div>
+        @*<div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    
+                    <span class="ml-1">frequently asked questions</span>
+                </div>
+            </div>
+                 </div>*@
+        <!-- row -->
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">FAQ</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            <table class="table table-hover table-bordered verticle-middle" style="min-width: 845px">
+                                <thead>
+                                    <tr>
+
+                                      <th><strong>Question</strong></th>
+                                        <th><strong>Answer</strong></th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        @foreach (var item in Model)
+                                        {
+                                        <tr>
+                                           <td>@item.faq_ques</td>
+                                            <td>@item.faq_ans</td>
+
+                                        </tr>
+                                        }
+
+
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+

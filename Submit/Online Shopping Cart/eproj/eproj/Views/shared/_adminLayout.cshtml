@@ -1,0 +1,404 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>On click| Admin Dashboard </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/ico" sizes="16x16" href="~/images/favicon.ico">
+    <link rel="stylesheet" href="~/admin/vendor/owl-carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/admin/vendor/owl-carousel/css/owl.theme.default.min.css">
+    <link href="~/admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="~/admin/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+</head>
+
+
+<body>
+
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="/" class="brand-logo">
+                <img class="logo-abbr" src="~/images/PngItem_1783030.png" alt="">
+                <img class="logo-compact" src="~/admin/images/logo-text.png" alt="">
+                <img class="brand-title" src="~/admin/images/logo-text.png" alt="">
+               
+                    </a>
+            
+
+
+                    <div class="nav-control">
+                        <div class="hamburger">
+                            <span class="line"></span><span class="line"></span><span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--**********************************
+            Nav header end
+        ***********************************-->
+                <!--**********************************
+            Header start
+        ***********************************-->
+                <div class="header">
+                    <div class="header-content">
+                        <nav class="navbar navbar-expand">
+                            <div class="collapse navbar-collapse justify-content-between">
+                                <div class="header-left">
+                                    <div class="search_bar dropdown">
+                                        <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                            <i class="mdi mdi-magnify"></i>
+                                        </span>
+                                        <div class="dropdown-menu p-0 m-0">
+                                            <form>
+                                                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <ul class="navbar-nav header-right">
+                                    <li class="nav-item dropdown notification_dropdown">
+                                        <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                            <i class="mdi mdi-bell"></i>
+                                            <div class="pulse-css"></div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <ul class="list-unstyled">
+                                                <li class="media dropdown-item">
+                                                    <span class="success"><i class="ti-user"></i></span>
+                                                    <div class="media-body">
+                                                        <a href="#">
+                                                            <p>
+                                                                <strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <span class="notify-time">3:20 am</span>
+                                                </li>
+                                                <li class="media dropdown-item">
+                                                    <span class="primary"><i class="ti-shopping-cart"></i></span>
+                                                    <div class="media-body">
+                                                        <a href="#">
+                                                            <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                                        </a>
+                                                    </div>
+                                                    <span class="notify-time">3:20 am</span>
+                                                </li>
+                                                <li class="media dropdown-item">
+                                                    <span class="danger"><i class="ti-bookmark"></i></span>
+                                                    <div class="media-body">
+                                                        <a href="#">
+                                                            <p>
+                                                                <strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <span class="notify-time">3:20 am</span>
+                                                </li>
+                                                <li class="media dropdown-item">
+                                                    <span class="primary"><i class="ti-heart"></i></span>
+                                                    <div class="media-body">
+                                                        <a href="#">
+                                                            <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                                        </a>
+                                                    </div>
+                                                    <span class="notify-time">3:20 am</span>
+                                                </li>
+                                                <li class="media dropdown-item">
+                                                    <span class="success"><i class="ti-image"></i></span>
+                                                    <div class="media-body">
+                                                        <a href="#">
+                                                            <p>
+                                                                <strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <span class="notify-time">3:20 am</span>
+                                                </li>
+                                            </ul>
+                                            <a class="all-notification" href="#">
+                                                See all notifications <i class="ti-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown header-profile">
+                                        <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                            <i class="mdi mdi-account"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="@Url.Action("profile","admn")" class="dropdown-item">
+                                                <i class="icon-user"></i>
+                                                <span class="ml-2">Profile </span>
+                                            </a>
+                                            <a href="@Url.Action("inbox","admn")" class="dropdown-item">
+                                                <i class="icon-envelope-open"></i>
+                                                <span class="ml-2">Inbox </span>
+                                            </a>
+                                            <a href="@Url.Action("logout","admn")" class="dropdown-item">
+                                                <i class="icon-key"></i>
+                                                <span class="ml-2">Logout </span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="quixnav">
+                    <div class="quixnav-scroll">
+                        <ul class="metismenu" id="menu">
+                            <li class="nav-label first">Main Menu</li>
+                         
+   
+                            <li class="nav-label">Dashboard</li>
+                            <li>
+                                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                    <i class="icon icon-single-04"></i>
+
+                                    <span class="nav-text">Dashboard</span>
+                                </a>
+                                <ul aria-expanded="false">
+
+                                    <li><a href="/admn/index">Home</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-label">Categories</li>
+                            <li>
+                                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                    <i class="icon icon-app-store"></i><span class="nav-text">Categories</span>
+                                </a>
+                                <ul aria-expanded="false">
+
+
+
+                                    <li><a href="@Url.Action("add_categories","admn")">Add Category</a></li>
+                                    <li><a href="@Url.Action("listcategory","admn")">Details Category</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-label">Products</li>
+                            <li>
+                                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <span class="nav-text">Products</span>
+                                </a>
+                                <ul aria-expanded="false">
+
+
+
+                                    <li><a href="@Url.Action("add_products","admn")">Add Products</a></li>
+                                    <li><a href="@Url.Action("listproduct","admn")">Details Products</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-label">Employees</li>
+                            <li>
+                                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                    <i class="fas fa-users"></i>
+                                    <span class="nav-text">Employees</span>
+                                </a>
+                                <ul aria-expanded="false">
+
+
+
+                                    <li><a href="@Url.Action("add_employee","admn")">Add Employee</a></li>
+                                    <li><a href="@Url.Action("listemployee","admn")">Details Employees</a></li>
+
+                                </ul>
+                            </li>
+
+
+                            <li class="nav-label">FAQ</li>
+                            <li>
+                                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <span class="nav-text">Faq</span>
+                                </a>
+                                <ul aria-expanded="false">
+
+
+
+                                    <li><a href="@Url.Action("faq","admn")">Add Faq</a></li>
+                                    <li><a href="@Url.Action("faqlist","admn")">Faq Details</a></li>
+
+                                </ul>
+                            </li>
+                            @*<li class="nav-label">Cart</li>
+                            <li>
+                                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                    <i class="fas fa-cart-arrow-down"></i>
+                                    <span class="nav-text">Cart</span>
+                                </a>
+                                <ul aria-expanded="false">
+
+                                
+
+                                
+                                    <li><a href="/home/addtocart">Cart Details </a></li>
+                                    
+
+                                </ul>
+                  
+                                </li>*@
+                            <li class="nav-label">Orders</li>
+                            <li>
+                                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                    <i class="fas fa-shapes"></i>
+                                    <span class="nav-text">Order</span>
+                                </a>
+                                <ul aria-expanded="false">
+
+
+
+
+                                    <li><a href="/home/orders">Order Details </a></li>
+
+
+                                </ul>
+
+                            </li>
+
+                                @*<li class="nav-label">Apps</li>
+                                <li>
+                                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                        <i class="fab fa-app-store-ios"></i>
+                                        <span class="nav-text">Apps</span>
+                                    </a>
+                                    <ul aria-expanded="false">
+                                        <li><a href="@Url.Action("profile","admn")">Profile</a></li>
+                                        <li>
+                                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                                            <ul aria-expanded="false">
+                                                <li><a href="@Url.Action("compose","admn")">Compose</a></li>
+                                                <li><a href="@Url.Action("inbox","admn")">Inbox</a></li>
+                                                <li><a href="@Url.Action("read","admn")">Read</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="./app-calender.html">Calendar</a></li>
+                                    </ul>
+                                </li>*@
+
+
+       
+                                <li class="nav-label">customers</li>
+                                <li>
+                                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                        <i class="far fa-address-card"></i>
+                                        
+                                        <span class="nav-text">Customer</span>
+                                    </a>
+                                    <ul aria-expanded="false">
+                                       
+                                        <li><a href="/admn/customercontact">Customer Details</a></li>
+                                    </ul>
+                                </li>
+
+                            <li class="nav-label">Feedback</li>
+                            <li>
+                                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                    <i class="far fa-address-card"></i>
+
+                                    <span class="nav-text">Feedback</span>
+                                </a>
+                                <ul aria-expanded="false">
+
+                                    <li><a href="/admn/feedbackresult">Feedback Details</a></li>
+                                </ul>
+                            </li>
+
+                                <li class="nav-label">Extra</li>
+                                <li>
+                                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                        <i class="icon icon-single-copy-06"></i><span class="nav-text">Pages</span>
+                                    </a>
+                                    <ul aria-expanded="false">
+                                        
+                                        <li><a href="@Url.Action("login","admn")">Login</a></li>
+
+                                        @*<li><a href="@Url.Action("lockscreen","admn")">Lock Screen</a></li>*@
+                                    </ul>
+                                </li>
+</ul>
+                    </div>
+
+
+                </div>
+                @RenderBody()
+
+                <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+                <div class="footer">
+                    <div class="copyright">
+                        <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
+                    </div>
+                </div>
+
+
+
+</div>
+
+    <!-- Required vendors -->
+    <script src="~/admin/vendor/global/global.min.js"></script>
+    <script src="~/admin/js/quixnav-init.js"></script>
+    <script src="~/admin/js/custom.min.js"></script>
+
+
+    <!-- Vectormap -->
+    <script src="~/admin/vendor/raphael/raphael.min.js"></script>
+    <script src="~/admin/vendor/morris/morris.min.js"></script>
+
+
+    <script src="~/admin/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="~/admin/vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <script src="~/admin/vendor/gaugeJS/dist/gauge.min.js"></script>
+
+    <!--  flot-chart js -->
+    <script src="~/admin/vendor/flot/jquery.flot.js"></script>
+    <script src="~/admin/vendor/flot/jquery.flot.resize.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="~/admin/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="~/admin/vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="~/admin/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="~/admin/vendor/jquery.counterup/jquery.counterup.min.js"></script>
+
+
+    <script src="~/admin/js/dashboard/dashboard-1.js"></script>
+
+</body>
+
+</html>

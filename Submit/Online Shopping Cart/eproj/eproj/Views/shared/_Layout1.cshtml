@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>On Click| online shopping mall</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Construction Html5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+
+    <!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="~/images/favicon.ico" />
+   
+    <!-- Themefisher Icon font -->
+    <link rel="stylesheet" href="~/plugins/themefisher-font/style.css">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="~/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Animate css -->
+    <link rel="stylesheet" href="~/plugins/animate/animate.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="~/plugins/slick/slick.css">
+    <link rel="stylesheet" href="~/plugins/slick/slick-theme.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .glyphicon{
+            padding:8px;
+        }
+        .logo{
+            font-family:'Monotype Corsiva';
+            font-size:50px;
+
+        }
+        .fa-2x {
+            font-size: 2em;
+            padding: 12px;
+            margin-top: -20px;
+        }
+        h3{
+ font-family:'Monotype Corsiva';
+ 
+        }
+        </style>
+  </head>
+<body id="body">
+
+
+    <section class="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12 col-sm-4">
+                    <div class="contact-number">
+                        <i class="tf-ion-ios-user"></i>
+                        @if (Session["username"] != null)
+                        {
+                            <h3>@Session["username"]</h3>
+
+                        }
+                        
+                    </div>
+              
+            </div>
+               
+
+                    <div class="col-md-4 col-xs-12 col-sm-4">
+                        <!-- Site Logo -->
+                        <div class="logo text-center">
+                            <a href="/home/index">
+                                <!-- replace logo here
+                    <svg width="135px" height="290px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
+                           font-family="AustinBold, Austin" font-weight="bold">
+                            <g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
+                                <text id="AVIATO">
+                                    <tspan x="107.94" y="325"style="height:inherit;">On Click </tspan>
+                                   <br><span>The Online Shopping Mall</span><br>
+
+                                </text>
+                            </g>
+                        </g>
+                    </svg>-->
+                                <span class="logo">On Click</span>
+                                <p class="text">The Online Shopping Mall</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 col-sm-4">
+                        <!-- Cart -->
+                        <ul class="top-menu text-right list-inline">
+                            <li class="dropdown cart-nav dropdown-slide">
+                                <a href="/home/addtocart" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                                    <i class="tf-ion-android-cart"></i>Cart
+                                </a>
+                                <div class="dropdown-menu cart-dropdown">
+                                    <!-- Cart Item -->
+                                    <div class="media">
+                                        <a class="pull-left" href="#!">
+                                            <img class="media-object" src="~/images/cart-1.jpg" alt="image" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading"><a href="#!">rainbow shoes</a></h4>
+                                            <div class="cart-price">
+                                                <span>1 x</span>
+                                                <span>1250.00</span>
+                                            </div>
+                                            <h5><strong>$1200</strong></h5>
+                                        </div>
+                                        <a href="#!" class="remove"><i class="tf-ion-close"></i></a>
+                                    </div><!-- / Cart Item -->
+                                    <!-- Cart Item -->
+                                    <div class="media">
+                                        <a class="pull-left" href="#!">
+                                            <img class="media-object" src="~/images/cart-2.jpg" alt="image" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
+                                            <div class="cart-price">
+                                                <span>1 x</span>
+                                                <span>1250.00</span>
+                                            </div>
+                                            <h5><strong>$1200</strong></h5>
+                                        </div>
+                                        <a href="#!" class="remove"><i class="tf-ion-close"></i></a>
+                                    </div><!-- / Cart Item -->
+
+                                    <div class="cart-summary">
+                                        <span>Total</span>
+                                        <span class="total-price">$1799.00</span>
+                                    </div>
+                                    <ul class="text-center cart-buttons">
+                                        <li><a href="/home/addtocart" class="btn btn-small">View Cart</a></li>
+                                        <li><a href="/home/checkout" class="btn btn-small btn-solid-border">Checkout</a></li>
+                                    </ul>
+                                </div>
+
+                            </li><!-- / Cart -->
+                           
+                            <!-- Languages -->
+                      
+
+                            <li class="dropdown dropdown-slide">
+
+
+                                <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+                                   role="button" aria-haspopup="true" aria-expanded="false">
+                                    Signin <span class="tf-ion-ios-arrow-down"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    @if (Session["username"] != null)
+                                    {
+                                        <li> <a href="@Url.Action("logout","home")">Logout</a></li>
+                                    }
+
+                                    else
+                                    {
+
+                                        <li><a href="/home/login">Login</a></li>
+                                        <li><a href="/home/signin">Register</a></li>
+                                        <li><a href="/admn/login"> Admin</a></li>
+                                    }
+
+
+                                </ul>
+
+                            </li>
+                                   
+                      
+                    
+                           
+                     
+
+                            @*<li class="commonSelect">
+                                <select class="form-control">
+                                    <option><a href="@Url.Action("logout","home")">Logout</a></option>
+                                    <option>DE</option>
+                                    <option>FR</option>
+                                    <option>ES</option>
+                                </select>
+                            </li>*@<!-- / Languages -->
+
+                        </ul><!-- / .nav .navbar-nav .navbar-right -->
+                    </div>
+                </div>
+        </div>
+    </section><!-- End Top Header Bar -->
+    <!-- Main Menu Section -->
+    <section class="menu">
+        <nav class="navbar navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <h2 class="menu-title">Main Menu</h2>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div><!-- / .navbar-header -->
+                <!-- Navbar Links -->
+                <div id="navbar" class="navbar-collapse collapse text-center">
+                    <ul class="nav navbar-nav">
+
+                        <!-- Home -->
+                        <li class="dropdown ">
+                            <a href="/home/index">Home</a>
+                        </li><!-- / Home -->
+                        <!-- Elements -->
+                        <li class="dropdown dropdown-slide">
+                            <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+                               role="button" aria-haspopup="true" aria-expanded="false">
+                                Shop <span class="tf-ion-ios-arrow-down"></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="row">
+
+                                    <!-- Basic -->
+                                    <div class="col-lg-6 col-md-6 mb-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header">Pages</li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="/home/shop">Shop</a></li>
+                                            <li><a href="/home/checkout">Checkout</a></li>
+                                            <li><a href="/home/addtocart">Cart</a></li>
+                                            <li><a href="/home/pricing">Pricing</a></li>
+                                            <li><a href="/home/confirmation">Confirmation</a></li>
+
+                                        </ul>
+                                    </div>
+
+                                    <!-- Layout -->
+                                    <div class="col-lg-6 col-md-6 mb-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header">Layout</li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="/home/productdetails">Product Details</a></li>
+                                            <li><a href="/home/sidebar">Shop With Sidebar</a></li>
+
+                                        </ul>
+                                    </div>
+
+                                </div><!-- / .row -->
+                            </div><!-- / .dropdown-menu -->
+                        </li><!-- / Elements -->
+                        <!-- Pages -->
+                        <li class="dropdown full-width dropdown-slide">
+                            <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+                               role="button" aria-haspopup="true" aria-expanded="false">
+                                Pages <span class="tf-ion-ios-arrow-down"></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="row">
+
+                                    <!-- Introduction -->
+                                    <div class="col-sm-3 col-xs-12">
+                                        <ul>
+                                            <li class="dropdown-header">Introduction</li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="/home/contact">Contact Us</a></li>
+                                            <li><a href="/home/about">About Us</a></li>
+                                            <li><a href="/home/feedback">Feedback</a></li>
+                                            <li><a href="/home/faq">FAQ</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Contact -->
+                                    <div class="col-sm-3 col-xs-12">
+                                        <ul>
+                                            <li class="dropdown-header">Dashboard</li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="/admn/login">dashboard</a></li>
+                                            <li><a href="/home/orders">Orders</a></li>
+                                            <li><a href="/home/address">Address</a></li>
+                                            <li><a href="/home/profile">Profile Details</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Utility -->
+                                    <div class="col-sm-3 col-xs-12">
+                                        <ul>
+                                            <li class="dropdown-header">Utility</li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="/home/login">Login Page</a></li>
+                                            <li><a href="/home/signin">Signin Page</a></li>
+                                           
+                                            <li><a href="/home/logout">logout Page</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Mega Menu -->
+                                    <div class="col-sm-3 col-xs-12">
+                                        <a href="/home/shop">
+                                            <img class="img-responsive" src="~/images/header-img.jpg" alt="menu image" />
+                                        </a>
+                                    </div>
+                                </div><!-- / .row -->
+                            </div><!-- / .dropdown-menu -->
+                        </li><!-- / Pages -->
+                        <!-- Blog -->
+                        <li class="dropdown dropdown-slide">
+                            <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+                               role="button" aria-haspopup="true" aria-expanded="false">
+                              categories <span class="tf-ion-ios-arrow-down"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/home/shop">cloths</a></li>
+                                <li><a href="/home/shoes">shoes</a></li>
+                                <li><a href="/home/toys">toys</a></li>
+                                <li><a href="/home/jewellery">jewellery</a></li>
+                                <li><a href="/home/makeup">makeup</a></li>
+                                <li><a href="/home/perfume">perfumes</a></li>
+                            </ul>
+                        </li><!-- / Blog -->
+                        <!-- Shop -->
+                        <li class="dropdown dropdown-slide">
+                            <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+                               role="button" aria-haspopup="true" aria-expanded="false">
+                                Blogs <span class="tf-ion-ios-arrow-down"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/home/blog">Full Blog</a></li>
+                            </ul>  
+                        </li>
+                        
+                        
+                    </ul>
+
+                </div>
+                <!--/.navbar-collapse -->
+            </div><!-- / .container -->
+        </nav>
+    </section>
+    
+    
+
+
+    <section class="products section">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </section>
+
+    <footer class="footer section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="social-media">
+                        <li>
+                            <a href="https://www.facebook.com/themefisher">
+                                <i class="tf-ion-social-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/themefisher">
+                                <i class="tf-ion-social-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/themefisher">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.pinterest.com/themefisher/">
+                                <i class="tf-ion-social-pinterest"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="footer-menu text-uppercase">
+                        <li>
+                            <a href="/home/contact">CONTACT</a>
+                        </li>
+                        <li>
+                            <a href="/home/index">SHOP</a>
+                        </li>
+                        <li>
+                            <a href="/home/pricing">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="/home/contact">PRIVACY POLICY</a>
+                        </li>
+                    </ul>
+                    <p class="copyright-text">Copyright &copy;2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+    Essential Scripts
+    =====================================-->
+    <!-- Main jQuery -->
+    <script src="~/plugins/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.1 -->
+    <script src="~/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Touchpin -->
+    <script src="~/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+    <!-- Instagram Feed Js -->
+    <script src="~/plugins/instafeed/instafeed.min.js"></script>
+    <!-- Video Lightbox Plugin -->
+    <script src="~/plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+    <!-- Count Down Js -->
+    <script src="~/plugins/syo-timer/build/jquery.syotimer.min.js"></script>
+
+    <!-- slick Carousel -->
+    <script src="~/plugins/slick/slick.min.js"></script>
+    <script src="~/plugins/slick/slick-animation.min.js"></script>
+
+    <!-- Google Mapl -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script type="text/javascript" src="~/plugins/google-map/gmap.js"></script>
+
+    <!-- Main Js File -->
+    <script src="~/js/script.js"></script>
+
+
+
+</body>
+</html>
+
+

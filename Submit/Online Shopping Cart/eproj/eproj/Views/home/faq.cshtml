@@ -1,0 +1,149 @@
+﻿@model IEnumerable<eproj.Models.faq>
+@{
+    ViewBag.Title = "faq";
+    Layout = "~/Views/shared/_Layout1.cshtml";
+}
+
+<style>
+    .accordion {
+  
+  /*color: #444;*/
+  background-color:white;
+  border:1px solid;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  /*border: none;*/
+  text-align: left;
+  /*outline: none;*/
+  font-size: 15px;
+  transition: 0.4s;
+  
+}
+
+.active, .accordion:hover {
+  /*color: rgba(128,68,97,1);*/
+}
+
+.panel {
+  padding: 0 18px;
+  /*background-color:rgba(254,213,233,1);*/
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-bottom:4px;
+}
+.panel2{
+  padding: 0 18px;
+    background-color:rgba(254,213,233,1);
+  height:100px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-bottom:4px;
+}
+
+input[type=text]{
+    background-color:transparent;
+    border:none;
+    height:100%;
+    width:100%;
+}
+.accordion:after {
+  content: '\002B';
+  /*color: #777;*/
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+</style>
+
+
+ <section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <h1 class="page-name">Frequently Asked Questions</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/index">Home</a></li>
+                        <li class="active">F.A.Q</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Frequently Asked Questions</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, repudiandae.</p>
+                <p>admin@mail.com</p>
+            </div>
+            <div class="col-md-8">
+                <h4>Order Status</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas iusto, alias, tempora fuga quam eveniet neque excepturi aliquid. Eligendi, mollitia.</p>
+                <h4>Shipping & Delivery</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatibus, incidunt similique nobis sint quisquam nam ab error consequuntur sit ullam ex eum exercitationem, excepturi explicabo beatae eos aspernatur odit ad perspiciatis, neque saepe magni enim. Maiores quia, quae sequi.</p>
+                
+            </div>
+ </div>
+        <br /><br />
+        <button class="accordion active">Cuáles son los medios de pago en Paruparo.cl?</button>
+        <div class="panel">
+            <p>
+                Nuestros formas de pago son:
+
+                WebPay Plus - Tarjeta debito, Tarjeta credito, Prepago, OnePay.
+            </p>
+        </div>
+
+        <button class="accordion">Qué es la garantía por 30 días?</button>
+        <div class="panel">
+            <p>Te ofrecemos una garantía por 30 días. Vas a quedar feliz con tu compra o te devolvemos lo que pagaste. Nos interesa genuinamente que seas feliz con tus productos de Paruparo.cl. Si no te gustó lee abajo los Cambios y Devoluciones.</p>
+        </div>
+
+        <button class="accordion">Como se realizar devoluciones y cambios?</button>
+        <div class="panel">
+            <p>Para realizar una devolución de un producto debes seguir las siguientes instrucciones:</p>
+        </div>
+
+      
+
+
+   
+
+    @foreach (var item in Model)
+    {
+        <button class="accordion">@item.faq_ques</button>
+        <div class="panel">
+            <p>@item.faq_ans</p>
+        </div>
+        }
+
+    </div>
+</section>
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>

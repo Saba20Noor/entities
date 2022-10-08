@@ -1,0 +1,88 @@
+﻿
+@model List<eproj.Models.feedback>
+@{ 
+    Layout = "~/Views/shared/_adminLayout.cshtml";
+}
+
+
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Hi, welcome back!</h4>
+                    <span class="ml-1">Feedback Details</span>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Feedback</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Feedback Details</a></li>
+                </ol>
+            </div>
+        </div>
+        @*<div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+               
+            </div>
+            <div class="welcome-text">
+                <h4>Hi, welcome back!</h4>
+                <span class="ml-1">Feedback Details</span>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">customer feedbacks</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">feedback</a></li>
+                </ol>
+            </div>
+        </div>*@
+        <!-- row -->
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                   
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            <table class="table table-hover table-bordered verticle-middle" style="min-width: 845px">
+                                <thead>
+                                    <tr>
+                                        <th>FEEDBACKS</th>
+                                        <th>EMAIL</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        @foreach (var item in Model)
+                                        {
+                                        <tr>
+                                            <td>@item.feedbacks</td>
+                                            <td>@item.feedback_email</td>
+                                           
+
+
+                                        </tr>
+                                        }
+
+
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+

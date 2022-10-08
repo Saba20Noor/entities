@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eprojectModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="pass" Type="Int32" />
+  </EntityType>
+  <EntityType Name="admin_detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pass" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="brand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="products" Relationship="Self.FK__products__brand___4222D4EF" FromRole="brand" ToRole="products" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="cate_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="produccts" Relationship="Self.FK__producct__cate_i__5FB337D6" FromRole="category" ToRole="producct" />
+    <NavigationProperty Name="products" Relationship="Self.FK__products__cate_i__412EB0B6" FromRole="category" ToRole="products" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="msg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="customerx">
+    <Key>
+      <PropertyRef Name="cust_id" />
+    </Key>
+    <Property Name="cust_id" Type="Int32" Nullable="false" />
+    <Property Name="fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contact" Type="Int64" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pass" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="customer_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="order_details" Relationship="Self.FK__order_det__cust___2F10007B" FromRole="customerx" ToRole="order_details" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="emp_id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pass" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="faq">
+    <Key>
+      <PropertyRef Name="faq_id" />
+    </Key>
+    <Property Name="faq_id" Type="Int32" Nullable="false" />
+    <Property Name="faq_question" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="faq_ans" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="feedback_id" />
+    </Key>
+    <Property Name="feedback_id" Type="Int32" Nullable="false" />
+    <Property Name="feedback1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="order_details">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="pay_id" Type="Int32" />
+    <Property Name="creditcard_no" Type="Int32" />
+    <Property Name="expire_date" Type="DateTime" Precision="0" />
+    <Property Name="total_amount" Type="Int64" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="order_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="order_date" Type="DateTime" Precision="0" />
+    <Property Name="cust_id" Type="Int32" />
+    <Property Name="contact" Type="Int64" />
+    <NavigationProperty Name="customerx" Relationship="Self.FK__order_det__cust___2F10007B" FromRole="order_details" ToRole="customerx" />
+    <NavigationProperty Name="payment_method" Relationship="Self.FK__order_det__pay_i__2E1BDC42" FromRole="order_details" ToRole="payment_method" />
+    <NavigationProperty Name="orderways" Relationship="Self.FK__orderway__order___45F365D3" FromRole="order_details" ToRole="orderway" />
+  </EntityType>
+  <EntityType Name="orderway">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int64" />
+    <Property Name="cancel_order" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="order_id" Type="Int32" />
+    <NavigationProperty Name="order_details" Relationship="Self.FK__orderway__order___45F365D3" FromRole="orderway" ToRole="order_details" />
+    <NavigationProperty Name="product" Relationship="Self.FK__orderway__produc__44FF419A" FromRole="orderway" ToRole="products" />
+  </EntityType>
+  <EntityType Name="payment_method">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="Int32" Nullable="false" />
+    <Property Name="payment_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="order_details" Relationship="Self.FK__order_det__pay_i__2E1BDC42" FromRole="payment_method" ToRole="order_details" />
+  </EntityType>
+  <EntityType Name="producct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="pname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="procode" Type="Int32" />
+    <Property Name="price" Type="Int64" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="cate_id" Type="Int32" />
+    <NavigationProperty Name="category" Relationship="Self.FK__producct__cate_i__5FB337D6" FromRole="producct" ToRole="category" />
+    <NavigationProperty Name="product_image" Relationship="Self.FK__product_i__pro_i__628FA481" FromRole="producct" ToRole="product_image" />
+  </EntityType>
+  <EntityType Name="product_image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="image_path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="pro_id" Type="Int32" />
+    <NavigationProperty Name="producct" Relationship="Self.FK__product_i__pro_i__628FA481" FromRole="product_image" ToRole="producct" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="procode" Type="Int32" />
+    <Property Name="price" Type="Int64" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="product_img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="warrenty_card" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cate_id" Type="Int32" />
+    <Property Name="brand_id" Type="Int32" />
+    <Property Name="product_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="brand" Relationship="Self.FK__products__brand___4222D4EF" FromRole="products" ToRole="brand" />
+    <NavigationProperty Name="category" Relationship="Self.FK__products__cate_i__412EB0B6" FromRole="products" ToRole="category" />
+    <NavigationProperty Name="orderways" Relationship="Self.FK__orderway__produc__44FF419A" FromRole="products" ToRole="orderway" />
+  </EntityType>
+  <Association Name="FK__products__brand___4222D4EF">
+    <End Role="brand" Type="Self.brand" Multiplicity="0..1" />
+    <End Role="products" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="brand_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__producct__cate_i__5FB337D6">
+    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+    <End Role="producct" Type="Self.producct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="producct">
+        <PropertyRef Name="cate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__products__cate_i__412EB0B6">
+    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+    <End Role="products" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="cate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__order_det__cust___2F10007B">
+    <End Role="customerx" Type="Self.customerx" Multiplicity="0..1" />
+    <End Role="order_details" Type="Self.order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerx">
+        <PropertyRef Name="cust_id" />
+      </Principal>
+      <Dependent Role="order_details">
+        <PropertyRef Name="cust_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__order_det__pay_i__2E1BDC42">
+    <End Role="payment_method" Type="Self.payment_method" Multiplicity="0..1" />
+    <End Role="order_details" Type="Self.order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="payment_method">
+        <PropertyRef Name="payment_id" />
+      </Principal>
+      <Dependent Role="order_details">
+        <PropertyRef Name="pay_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__orderway__order___45F365D3">
+    <End Role="order_details" Type="Self.order_details" Multiplicity="0..1" />
+    <End Role="orderway" Type="Self.orderway" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order_details">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="orderway">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__orderway__produc__44FF419A">
+    <End Role="products" Type="Self.product" Multiplicity="0..1" />
+    <End Role="orderway" Type="Self.orderway" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="orderway">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__product_i__pro_i__628FA481">
+    <End Role="producct" Type="Self.producct" Multiplicity="0..1" />
+    <End Role="product_image" Type="Self.product_image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producct">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="product_image">
+        <PropertyRef Name="pro_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="eprojectEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admins" EntityType="Self.admin" />
+    <EntitySet Name="admin_detail" EntityType="Self.admin_detail" />
+    <EntitySet Name="brands" EntityType="Self.brand" />
+    <EntitySet Name="categories" EntityType="Self.category" />
+    <EntitySet Name="contacts" EntityType="Self.contact" />
+    <EntitySet Name="customerxes" EntityType="Self.customerx" />
+    <EntitySet Name="employees" EntityType="Self.employee" />
+    <EntitySet Name="faqs" EntityType="Self.faq" />
+    <EntitySet Name="feedbacks" EntityType="Self.feedback" />
+    <EntitySet Name="order_details" EntityType="Self.order_details" />
+    <EntitySet Name="orderways" EntityType="Self.orderway" />
+    <EntitySet Name="payment_method" EntityType="Self.payment_method" />
+    <EntitySet Name="produccts" EntityType="Self.producct" />
+    <EntitySet Name="product_image" EntityType="Self.product_image" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <AssociationSet Name="FK__products__brand___4222D4EF" Association="Self.FK__products__brand___4222D4EF">
+      <End Role="brand" EntitySet="brands" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__producct__cate_i__5FB337D6" Association="Self.FK__producct__cate_i__5FB337D6">
+      <End Role="category" EntitySet="categories" />
+      <End Role="producct" EntitySet="produccts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__products__cate_i__412EB0B6" Association="Self.FK__products__cate_i__412EB0B6">
+      <End Role="category" EntitySet="categories" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__order_det__cust___2F10007B" Association="Self.FK__order_det__cust___2F10007B">
+      <End Role="customerx" EntitySet="customerxes" />
+      <End Role="order_details" EntitySet="order_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__order_det__pay_i__2E1BDC42" Association="Self.FK__order_det__pay_i__2E1BDC42">
+      <End Role="payment_method" EntitySet="payment_method" />
+      <End Role="order_details" EntitySet="order_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__orderway__order___45F365D3" Association="Self.FK__orderway__order___45F365D3">
+      <End Role="order_details" EntitySet="order_details" />
+      <End Role="orderway" EntitySet="orderways" />
+    </AssociationSet>
+    <AssociationSet Name="FK__orderway__produc__44FF419A" Association="Self.FK__orderway__produc__44FF419A">
+      <End Role="products" EntitySet="products" />
+      <End Role="orderway" EntitySet="orderways" />
+    </AssociationSet>
+    <AssociationSet Name="FK__product_i__pro_i__628FA481" Association="Self.FK__product_i__pro_i__628FA481">
+      <End Role="producct" EntitySet="produccts" />
+      <End Role="product_image" EntitySet="product_image" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<eproj.Models.cart>
+
+@{
+    ViewBag.Title = "addtocart";
+
+    Layout = "~/Views/shared/_Layout1.cshtml";
+}
+
+<div class="container">
+    <h2>addtocart</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cqty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customer.fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product.product_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cqty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer.fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product.product_name)
+        </td>
+        <td>
+            <a href="@Url.Action("removecart","home", new {id=@item.cart_id})" class="btn fa fa-close color-danger" style="color:red"></a>
+            <a href="@Url.Action("checkout","home", new {id=@item.cart_id})" class="btn fa fa-check" style="color:darkgreen"></a>
+
+        </td>
+    </tr>
+}
+
+</table>
+    </div>

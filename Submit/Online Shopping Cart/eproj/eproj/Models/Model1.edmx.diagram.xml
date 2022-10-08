@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="acc13995b1ce4ba2b14f8091d0ed259d" Name="Diagram1">
+        <EntityTypeShape EntityType="shopModel.admin_detail" Width="1.5" PointX="7.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.brand" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.cart" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.category" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.contact" Width="1.5" PointX="7.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.customer" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.employee" Width="1.5" PointX="7.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.employee_img" Width="1.5" PointX="10" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.faq" Width="1.5" PointX="9.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.feedback" Width="1.5" PointX="9.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.order_detail" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.payment_method" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.product" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="shopModel.product_img" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="shopModel.FK__product__brand_i__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="shopModel.FK__cart__cust_id__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="shopModel.FK__cart__pro_id__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="shopModel.FK__product__cate_id__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="shopModel.FK__order_det__cust___30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="shopModel.FK__employee___emp_i__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="shopModel.FK__order_det__pay_i__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="shopModel.FK__product_i__pro_i__4316F928" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

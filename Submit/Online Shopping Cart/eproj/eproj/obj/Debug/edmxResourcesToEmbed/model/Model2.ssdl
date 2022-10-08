@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eprojectModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="30" />
+    <Property Name="pass" Type="int" />
+  </EntityType>
+  <EntityType Name="admin_detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="pass" Type="varchar(max)" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="brand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="cate_name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+    <Property Name="msg" Type="varchar(max)" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="country" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="customerx">
+    <Key>
+      <PropertyRef Name="cust_id" />
+    </Key>
+    <Property Name="cust_id" Type="int" Nullable="false" />
+    <Property Name="fname" Type="varchar" MaxLength="50" />
+    <Property Name="lname" Type="varchar" MaxLength="50" />
+    <Property Name="contact" Type="bigint" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="pass" Type="varchar(max)" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="country" Type="varchar" MaxLength="50" />
+    <Property Name="customer_address" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="emp_id" />
+    </Key>
+    <Property Name="emp_id" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="pass" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="faq">
+    <Key>
+      <PropertyRef Name="faq_id" />
+    </Key>
+    <Property Name="faq_id" Type="int" Nullable="false" />
+    <Property Name="faq_question" Type="varchar" MaxLength="100" />
+    <Property Name="faq_ans" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="feedback_id" />
+    </Key>
+    <Property Name="feedback_id" Type="int" Nullable="false" />
+    <Property Name="feedback" Type="varchar" MaxLength="200" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="order_details">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="int" Nullable="false" />
+    <Property Name="pay_id" Type="int" />
+    <Property Name="creditcard_no" Type="int" />
+    <Property Name="expire_date" Type="date" />
+    <Property Name="total_amount" Type="bigint" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="order_status" Type="varchar" MaxLength="50" />
+    <Property Name="order_date" Type="date" />
+    <Property Name="cust_id" Type="int" />
+    <Property Name="contact" Type="bigint" />
+  </EntityType>
+  <EntityType Name="orderway">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="bigint" />
+    <Property Name="cancel_order" Type="varchar" MaxLength="100" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="order_id" Type="int" />
+  </EntityType>
+  <EntityType Name="payment_method">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="int" Nullable="false" />
+    <Property Name="payment_type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="producct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="pname" Type="varchar" MaxLength="100" />
+    <Property Name="procode" Type="int" />
+    <Property Name="price" Type="bigint" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="cate_id" Type="int" />
+  </EntityType>
+  <EntityType Name="product_image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="image_path" Type="varchar" MaxLength="200" />
+    <Property Name="pro_id" Type="int" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="procode" Type="int" />
+    <Property Name="price" Type="bigint" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="product_img" Type="varchar" MaxLength="50" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="warrenty_card" Type="varchar" MaxLength="50" />
+    <Property Name="cate_id" Type="int" />
+    <Property Name="brand_id" Type="int" />
+    <Property Name="product_name" Type="varchar(max)" />
+  </EntityType>
+  <Association Name="FK__order_det__cust___2F10007B">
+    <End Role="customerx" Type="Self.customerx" Multiplicity="0..1" />
+    <End Role="order_details" Type="Self.order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerx">
+        <PropertyRef Name="cust_id" />
+      </Principal>
+      <Dependent Role="order_details">
+        <PropertyRef Name="cust_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__order_det__pay_i__2E1BDC42">
+    <End Role="payment_method" Type="Self.payment_method" Multiplicity="0..1" />
+    <End Role="order_details" Type="Self.order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="payment_method">
+        <PropertyRef Name="payment_id" />
+      </Principal>
+      <Dependent Role="order_details">
+        <PropertyRef Name="pay_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__orderway__order___45F365D3">
+    <End Role="order_details" Type="Self.order_details" Multiplicity="0..1" />
+    <End Role="orderway" Type="Self.orderway" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order_details">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="orderway">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__orderway__produc__44FF419A">
+    <End Role="products" Type="Self.products" Multiplicity="0..1" />
+    <End Role="orderway" Type="Self.orderway" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="orderway">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__producct__cate_i__5FB337D6">
+    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+    <End Role="producct" Type="Self.producct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="producct">
+        <PropertyRef Name="cate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__product_i__pro_i__628FA481">
+    <End Role="producct" Type="Self.producct" Multiplicity="0..1" />
+    <End Role="product_image" Type="Self.product_image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producct">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="product_image">
+        <PropertyRef Name="pro_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__products__brand___4222D4EF">
+    <End Role="brand" Type="Self.brand" Multiplicity="0..1" />
+    <End Role="products" Type="Self.products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="brand_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__products__cate_i__412EB0B6">
+    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+    <End Role="products" Type="Self.products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="cate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="eprojectModel1StoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_detail" EntityType="Self.admin_detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="brand" EntityType="Self.brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customerx" EntityType="Self.customerx" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="faq" EntityType="Self.faq" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="feedback" EntityType="Self.feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="order_details" EntityType="Self.order_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderway" EntityType="Self.orderway" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payment_method" EntityType="Self.payment_method" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="producct" EntityType="Self.producct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="product_image" EntityType="Self.product_image" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__order_det__cust___2F10007B" Association="Self.FK__order_det__cust___2F10007B">
+      <End Role="customerx" EntitySet="customerx" />
+      <End Role="order_details" EntitySet="order_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__order_det__pay_i__2E1BDC42" Association="Self.FK__order_det__pay_i__2E1BDC42">
+      <End Role="payment_method" EntitySet="payment_method" />
+      <End Role="order_details" EntitySet="order_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__orderway__order___45F365D3" Association="Self.FK__orderway__order___45F365D3">
+      <End Role="order_details" EntitySet="order_details" />
+      <End Role="orderway" EntitySet="orderway" />
+    </AssociationSet>
+    <AssociationSet Name="FK__orderway__produc__44FF419A" Association="Self.FK__orderway__produc__44FF419A">
+      <End Role="products" EntitySet="products" />
+      <End Role="orderway" EntitySet="orderway" />
+    </AssociationSet>
+    <AssociationSet Name="FK__producct__cate_i__5FB337D6" Association="Self.FK__producct__cate_i__5FB337D6">
+      <End Role="category" EntitySet="category" />
+      <End Role="producct" EntitySet="producct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__product_i__pro_i__628FA481" Association="Self.FK__product_i__pro_i__628FA481">
+      <End Role="producct" EntitySet="producct" />
+      <End Role="product_image" EntitySet="product_image" />
+    </AssociationSet>
+    <AssociationSet Name="FK__products__brand___4222D4EF" Association="Self.FK__products__brand___4222D4EF">
+      <End Role="brand" EntitySet="brand" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__products__cate_i__412EB0B6" Association="Self.FK__products__cate_i__412EB0B6">
+      <End Role="category" EntitySet="category" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

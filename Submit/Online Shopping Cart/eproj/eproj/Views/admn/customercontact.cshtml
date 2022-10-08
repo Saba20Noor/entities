@@ -1,0 +1,81 @@
+﻿@model List<eproj.Models.contact>
+@{ ViewBag.Title = "customer requests";
+    Layout = "~/Views/shared/_adminLayout.cshtml";
+}
+
+
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Hi, welcome back!</h4>
+                    <span class="ml-1">Customer Details</span>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Customer</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Customer Details</a></li>
+                </ol>
+            </div>
+        </div>
+        <!-- row -->
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">customer information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            <table class="table table-hover table-bordered verticle-middle" style="min-width: 845px">
+                                <thead>
+                                    <tr>
+                                   
+                                        <th>Name</th>
+                                        <th>email</th>
+                                        <th>city</th>
+                                        <th>country</th>
+                                        <th>Masssage</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        @foreach (var item in Model)
+                                        {
+                                        <tr>
+                                            <td>@item.cont_name</td>
+                                            <td>@item.email</td>
+                                            <td>@item.city</td>
+                                            <td>@item.country</td>
+                                            <td>@item.msg</td>
+                                           
+
+
+                                        </tr>
+                                        }
+
+
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+

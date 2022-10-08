@@ -1,0 +1,73 @@
+﻿@model IEnumerable<eproj.Models.cart>
+@{
+    ViewBag.Title = "cart";
+    Layout = "~/Views/shared/_Layout1.cshtml";
+}
+
+<h2>cart</h2>
+
+
+
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>name</th>
+                                        <th>price</th>
+                                        <th>category</th>
+                                        <th>quantity</th>
+                                        <th>amount</th>
+                                    </tr>
+    @foreach (var item in ViewBag.check)
+    {
+        var tot = 0;
+        var pro = new eproj.Models.shopEntities().products.ToList();
+        foreach (var item1 in pro)
+        {
+            if (item1.pro_id == item.id)
+            {
+                var amount = item1.price * item.quantity;
+                tot += amount;
+                <tr>
+                    <td>@item1.product_name</td>
+                    <td>@item1.price</td>
+                    <td>@item1.category.cate_name</td>
+                    <td>@item.quantity</td>
+                    <td>@amount</td>
+                </tr>
+            }
+        }
+
+        <thead>
+            <tr>
+                <td></td>
+            </tr>
+        </thead>
+                                    @*<tbody>
+                                            <tr class="">
+                                                <td id="#product-modal">
+                                                 <div class="product-info">
+                                                        <img width="80" src="~/images/cart-1.jpg" alt="" />
+                                                        <a href="#!"></a>
+                                                    </div>
+                                                </td>
+                                                <td class="">$200.00</td>
+                                                <td class="">
+                                                    <a class="product-remove" href="#!">Remove</a>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>*@
+    }
+                                </table>
+    
+                             
+
+                                <a href="/home/checkout" class="btn btn-main pull-right">Checkout</a>
+                            @*</form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@

@@ -1,0 +1,45 @@
+﻿@model eproj.Models.employee
+@{
+    ViewBag.Title = "emplogin";
+    Layout = "~/Views/shared/_Layout1.cshtml";
+}
+
+<h2>emplogin</h2>
+
+<section class="signin-page account">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="block text-center">
+                    <a class="logo" href="/home/index">
+                        <img src="~/images/logo.png" alt="">
+                    </a>
+
+                    <h2 class="text-center">Login here</h2>
+
+                    @using (Html.BeginForm("emplogin", "home", FormMethod.Post))
+                    {
+                        <form class="text-left clearfix" action="/home/index">
+
+
+
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="username" name="username">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password" name="pass">
+                            </div>
+                            @ViewBag.err
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-main text-center">Login</button>
+                            </div>
+                        </form>
+                    }
+                    <p class="mt-20">New in this site ?<a href="/home/empsignup"> Create New Account</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

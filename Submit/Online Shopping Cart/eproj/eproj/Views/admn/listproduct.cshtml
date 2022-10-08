@@ -1,0 +1,95 @@
+﻿@model List<eproj.Models.product>
+@{
+    ViewBag.Title = "listproduct";
+    Layout = "~/Views/shared/_adminLayout.cshtml";
+}
+
+
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Hi, welcome back!</h4>
+                    <span class="ml-1">Products Details</span>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Products</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Details Product</a></li>
+                </ol>
+            </div>
+        </div>
+        <!-- row -->
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Product Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            <table class="table table-hover table-bordered verticle-middle" style="min-width: 845px">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Procode</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Details</th>
+                                     
+
+                                      
+                                        <th>Action</th>
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        @foreach(var item in Model)
+                                        {
+                                        <tr>
+                                            <td>@item.pro_id</td>
+                                            <td>@item.product_name</td>
+                                            <td>@item.pro_code</td>
+                                            <td>@item.price</td>
+                                            <td>@item.quantity</td>
+                                            <td>@item.description</td>
+                                          
+                       
+
+
+
+                            <td>
+                                                <a href="@Url.Action("editproducts","admn",new {id=@item.pro_id })" class="btn fa fa-pencil color-muted " style="color:mediumseagreen"></a>
+                                                <a href="@Url.Action("delpro","admn", new {id=@item.pro_id})" class="btn fa fa-close color-danger" style="color:red"></a>
+
+                                            </td>
+
+
+                                        </tr>
+                                        }
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+

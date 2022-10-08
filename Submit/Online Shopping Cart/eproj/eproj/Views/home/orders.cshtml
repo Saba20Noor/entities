@@ -1,0 +1,86 @@
+﻿@model IEnumerable<eproj.Models.order_detail>
+@{
+    ViewBag.Title = "orders";
+    Layout = "~/Views/shared/_adminLayout.cshtml";
+}
+
+
+
+
+@*<section class="user-dashboard page-wrapper">*@
+<div class="content-body">
+    <div class="container-fluid">
+
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Hi, welcome back!</h4>
+                    <span class="ml-1">Orders Details</span>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Orders</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Details Order</a></li>
+                </ol>
+            </div>
+        </div>
+        @*<div class="row">
+            <div class="col-md-12">
+                <ul class="list-inline dashboard-menu text-center">
+                    
+                        
+                           
+                           
+                     </ul>   
+                    </div>*@
+                    
+                    @*<li><a href="/admn/login">Dashboard</a></li>
+            <li><a class="active" href="/home/orders">Orders</a></li>*@
+
+
+                    @using (Html.BeginForm("orders", "home", FormMethod.Post))
+                    {
+                        <div class="dashboard-wrapper user-dashboard">
+                            <div class="table-responsive">
+                                <input type="text" name="txtsearch" />
+                                <input type="submit" value="search" />
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>customer name</th>
+                                            <th>Date</th>
+                                            <th>Items</th>
+                                            <th>Payment type</th>
+                                            <th>Total Price</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.full_name</td>
+                                                <td>@item.order_date</td>
+                                                <td>@item.quantity</td>
+                                                <td>@item.pay_id</td>
+                                                <td>$@item.amount</td>
+                                                <td><span class="label label-warning">@item.order_status</span></td>
+                                                <td><a href="/home/addtocart" class="btn btn-default">View</a></td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    }
+
+</div>
+        </div>
+                
+ 

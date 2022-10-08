@@ -1,0 +1,76 @@
+﻿@model eproj.Models.product
+@{
+    ViewBag.Title = "add_products";
+    Layout = "~/Views/shared/_adminLayout.cshtml";
+}
+
+<br /><br />
+ 
+
+
+
+
+@*<body class="h-100">*@
+<div class="content-body">
+    <div class="authincation h-100">
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <h4 class="text-center mb-4">Add Products</h4>
+
+                                    @using (Html.BeginForm("add_products", "admn", FormMethod.Post, new { enctype = "Multipart/form-data" }))
+                                    {
+                                        <div class="form-group">
+                                            <label><strong>Product Name</strong> </label>
+                                            <input type="text" name="product_name" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Procode</strong></label>
+                                            <input type="number" name="pro_code" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Price</strong></label>
+                                            <input type="number" name="price" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Description</strong></label>
+
+                                            <textarea class="form-control" name="description"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>Quantity</strong></label>
+                                            <input type="number" name="quantity" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><strong>image</strong></label>
+                                            <input type="file" name="img" class="form-control">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label><strong>Add Category</strong></label>
+                                            @Html.DropDownList("cate_id", null, new { @class = "form-control", required = "required" })
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary btn-block">Add Products</button>
+                                        </div>
+                                    }
+                                    @ViewBag.error
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
